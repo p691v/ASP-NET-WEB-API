@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  api:
+    build:
+      context: "/home/aschapov/RiderProjects/TestApi"
+      dockerfile: "Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/netcoreapp3.1/TestApi.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "testapi:dev"
+    ports: []
+    volumes:
+    - "/home/aschapov/.nuget/packages:/root/.nuget/packages"
+    - "/home/aschapov/RiderProjects/TestApi:/app:rw"
+    - "/home/aschapov/RiderProjects/TestApi:/src:rw"
+    working_dir: "/app"
